@@ -16,6 +16,12 @@ namespace CVBackend
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddSingleton<DIProvider, DIProvider>();
+
+            builder.Services.AddTransient<IHandlerFactory>(sp => new HandlerFactory(sp.GetRequiredService<DataAccess.DIProvider>()));
+
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

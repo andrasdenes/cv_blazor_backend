@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	<UserSecretsId>4e4632fd-e251-4a14-b589-8d97930efffc</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

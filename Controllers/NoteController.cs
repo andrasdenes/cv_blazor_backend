@@ -17,7 +17,7 @@ namespace CVBackend.Controllers
         [Route("/api/notes/create")]
         public HttpResponseMessage CreateSingleNote()
         {
-            Handler.CreateSingleNote("asd", "asd");
+            Handler.CreateSingleNote("asd123_", "_asd321");
             return new HttpResponseMessage(statusCode: System.Net.HttpStatusCode.OK);
 
         }

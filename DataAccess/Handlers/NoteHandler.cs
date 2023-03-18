@@ -17,7 +17,7 @@ namespace DataAccess.Handlers
                 Title = title,
                 Description = description
             };
-            _ctx.Notes.Add(note);
+            _ctx.Notes?.Add(note);
             _ctx.SaveChanges();
 
             return note;
