@@ -31,8 +31,7 @@ namespace DataAccess
                     options => options.UseCosmos(
                         configuration["CosmosDb:AccountEndpoint"], 
                         configuration["CosmosDb:AccountKey"], 
-                        configuration["CosmosDb:DatabaseName"], 
-                        op =>{ op.ConnectionMode(ConnectionMode.Gateway); }
+                        configuration["CosmosDb:DatabaseName"]
                         )
             );
 
