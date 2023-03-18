@@ -1,3 +1,6 @@
+using DataAccess;
+using System.ComponentModel;
+
 namespace CVBackend
 {
     public class Program
