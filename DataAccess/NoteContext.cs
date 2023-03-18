@@ -3,6 +3,7 @@ using DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using System.Net;
 using System.Reflection.Emit;
 
@@ -22,11 +23,15 @@ namespace DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultContainer("Notes");
+
             modelBuilder.Entity<Note>()
                 .HasNoDiscriminator()
-                .HasPartitionKey(o=>o.Id);
-            modelBuilder.Entity<Note>().Property(o => o.Id).HasConversion<string>();
-            
+                .HasPartitionKey(o=>o.Id)
+                .HasKey(o=>o.Id);
+
+            modelBuilder.Entity<Note>()
+                .Property(o => o.Id)
+                .HasConversion<string>();
         }
     }
 }
