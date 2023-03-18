@@ -14,7 +14,7 @@ namespace CVBackend.Controllers
         }
 
         [HttpGet]
-        [Route("/api/notes/create")]
+        [Route("/api/[controller]/create")]
         public HttpResponseMessage CreateSingleNote()
         {
             Handler.CreateSingleNote("asd123_", "_asd321");
