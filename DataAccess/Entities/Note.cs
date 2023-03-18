@@ -8,7 +8,6 @@ namespace DataAccess.Entities
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid Id { get; set; }
-        public string PartitionId { get; set; }
         public string? Title { get; set; }
         public string? Description { get; set; }
     }
