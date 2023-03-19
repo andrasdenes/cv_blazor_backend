@@ -1,7 +1,6 @@
 ﻿using DataAccess.HandlerInterfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Runtime.InteropServices;
 
 namespace DataAccess
 {

@@ -1,7 +1,7 @@
 ﻿using DataAccess;
 using DataAccess.Entities;
-using DataAccess.HandlerInterfaces;
 using DataAccess.HandlerImplementations;
+using DataAccess.HandlerInterfaces;
 using DTO;
 using Microsoft.AspNetCore.Mvc;
 

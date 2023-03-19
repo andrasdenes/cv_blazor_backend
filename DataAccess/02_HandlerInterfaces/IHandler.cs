@@ -1,6 +1,4 @@
-﻿using DataAccess.Entities;
-
-namespace DataAccess.HandlerInterfaces
+﻿namespace DataAccess.HandlerInterfaces
 {
     public interface IHandler
     {
