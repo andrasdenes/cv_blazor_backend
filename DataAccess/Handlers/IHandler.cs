@@ -4,6 +4,8 @@ namespace DataAccess.Handlers
 {
     public interface IHandler
     {
-        public object CreateSingleNote(string title, string description);
+        public object CreateSingle(string title, string description);
+        public object GetAll();
+        public object GetSingle(Guid id);
     }
 }

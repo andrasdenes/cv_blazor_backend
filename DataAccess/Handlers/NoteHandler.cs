@@ -10,7 +10,7 @@ namespace DataAccess.Handlers
             _ctx = context;
         }
 
-        public object CreateSingleNote(string title, string description)
+        public object CreateSingle(string title, string description)
         {
             Note note = new Note()
             {
@@ -21,6 +21,18 @@ namespace DataAccess.Handlers
             _ctx.SaveChanges();
 
             return note;
+        }
+
+        public object GetSingle(Guid id)
+        {
+            Note note = _ctx.Notes.FirstOrDefault(x=>x.Id == id);
+            return note;
+        }
+
+        public object GetAll()
+        {
+            var notes = _ctx.Notes?.ToList();
+            return notes;
         }
     }
 }

@@ -11,9 +11,13 @@
 
   <ItemGroup>
     <Compile Remove="DataAccess\**" />
+    <Compile Remove="DTO\**" />
     <Content Remove="DataAccess\**" />
+    <Content Remove="DTO\**" />
     <EmbeddedResource Remove="DataAccess\**" />
+    <EmbeddedResource Remove="DTO\**" />
     <None Remove="DataAccess\**" />
+    <None Remove="DTO\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="DTO\DTO.csproj" />
   </ItemGroup>
 
 </Project>
