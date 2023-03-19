@@ -1,11 +1,5 @@
-﻿using Azure;
-using DataAccess.Entities;
+﻿using DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
-using System.Net;
-using System.Reflection.Emit;
 
 namespace DataAccess
 {
