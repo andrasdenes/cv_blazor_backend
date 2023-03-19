@@ -54,11 +54,13 @@ namespace CVBackend.Controllers
             string uriString = $"{BaseUrl}/{ApiRoutePrefix}/{ControllerName}/{note.Id}";
             return new Uri(uriString);
         }
-        //public HttpResponseMessage CreateSingleNote()
-        //{
-        //    Handler.CreateSingleNote("asd123_", "_asd321");
-        //    return new HttpResponseMessage(statusCode: System.Net.HttpStatusCode.OK);
 
-        //}
+        [HttpPost]
+        public HttpResponseMessage CreateSingleNote()
+        {
+            Handler.CreateSingle("asd123_", "_asd321");
+            return new HttpResponseMessage(statusCode: System.Net.HttpStatusCode.OK);
+
+        }
     }
 }
