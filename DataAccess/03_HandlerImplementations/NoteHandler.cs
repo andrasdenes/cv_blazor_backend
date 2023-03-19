@@ -1,6 +1,7 @@
 ﻿using DataAccess.Entities;
+using DataAccess.HandlerInterfaces;
 
-namespace DataAccess.Handlers
+namespace DataAccess.HandlerImplementations
 {
     public class NoteHandler : IHandler
     {

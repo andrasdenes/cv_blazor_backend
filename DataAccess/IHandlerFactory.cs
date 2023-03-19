@@ -1,4 +1,4 @@
-﻿using DataAccess.Handlers;
+﻿using DataAccess.HandlerInterfaces;
 
 namespace DataAccess
 {

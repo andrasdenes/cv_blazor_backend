@@ -1,6 +1,6 @@
 ﻿using DataAccess.Entities;
 
-namespace DataAccess.Handlers
+namespace DataAccess.HandlerInterfaces
 {
     public interface IHandler
     {
