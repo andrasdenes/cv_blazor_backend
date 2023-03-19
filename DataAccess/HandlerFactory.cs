@@ -23,7 +23,7 @@ namespace DataAccess
         public IHandler Create(Type type)
         {
             object[] args = new object[] { Context };
-            var handler = Activator.CreateInstance(type, args);
+            var handler = Activator.CreateInstance(type, args) ?? throw new NullReferenceException(message:$"Could not create isntance of type: {nameof(type)}");
             
             return handler as IHandler; 
         }

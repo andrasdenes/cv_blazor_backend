@@ -11,11 +11,11 @@ namespace CVBackend.Controllers
     [Route($"{ApiRouteController}")]
     public class NotesController : BaseController
     {
-        public IHandler Handler { get; set; }
+        public INoteHandler Handler { get; set; }
         public string ControllerName { get; set; }
         public NotesController(IHandlerFactory factory)
         {
-            Handler = factory.Create(typeof(NoteHandler));
+            Handler = (INoteHandler)factory.Create(typeof(NoteHandler));
             ControllerName = "Notes"; 
         }
 
@@ -26,7 +26,7 @@ namespace CVBackend.Controllers
             var notes = Handler.GetAll();
             if(notes != null ) 
             {
-                foreach (var note in notes as List<Note>)
+                foreach (var note in notes)
                 { 
                     NoteDto noteDto = new NoteDto();
                     noteDto.Title = note.Title;
@@ -41,7 +41,7 @@ namespace CVBackend.Controllers
         [HttpGet("{id}")]
         public IActionResult GetSingle(Guid id)
         {
-            Note note = Handler.GetSingle(id) as Note;
+            Note note = Handler.GetSingle(id);
             var noteDto = new NoteDto();
             noteDto.Title = note.Title;
             noteDto.Description = note.Description;

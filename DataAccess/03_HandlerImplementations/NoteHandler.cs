@@ -3,7 +3,7 @@ using DataAccess.HandlerInterfaces;
 
 namespace DataAccess.HandlerImplementations
 {
-    public class NoteHandler : IHandler
+    public class NoteHandler : Handler, INoteHandler
     {
         private readonly NoteContext _ctx;
         public NoteHandler(NoteContext context)
@@ -11,7 +11,7 @@ namespace DataAccess.HandlerImplementations
             _ctx = context;
         }
 
-        public object CreateSingle(string title, string description)
+        public Note CreateSingle(string title, string description)
         {
             Note note = new Note()
             {
@@ -24,13 +24,13 @@ namespace DataAccess.HandlerImplementations
             return note;
         }
 
-        public object GetSingle(Guid id)
+        public Note GetSingle(Guid id)
         {
             Note note = _ctx.Notes.FirstOrDefault(x=>x.Id == id);
             return note;
         }
 
-        public object GetAll()
+        public List<Note> GetAll()
         {
             var notes = _ctx.Notes?.ToList();
             return notes;
