@@ -20,7 +20,7 @@ namespace CVBackend.Controllers
         [HttpGet]
         public CollectionDto<JobDto> GetAll()
         {
-            return new CollectionDto<JobDto>();
+            return Handler.GetAllJobs();
         }
 
         [HttpGet("{id}")]

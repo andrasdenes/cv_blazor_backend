@@ -1,5 +1,4 @@
 ﻿using DataAccess.Configuration;
-using DataAccess.MapperConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,8 +25,6 @@ namespace DataAccess
             var configuration = configurationBuilder.Build();
 
             collection.Configure<DataAccessConfig>(configuration);
-
-            collection.AddAutoMapper(typeof(EntityToDtoMapperConfiguration));
 
             collection.AddDbContext<JobContext>(
                     options => options.UseCosmos(

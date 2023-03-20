@@ -19,8 +19,6 @@ namespace CVBackend
 
             builder.Services.AddTransient<IHandlerFactory>(sp => new HandlerFactory(sp.GetRequiredService<DataAccess.DIProvider>()));
 
-
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,7 +31,6 @@ namespace CVBackend
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

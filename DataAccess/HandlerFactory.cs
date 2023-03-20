@@ -17,7 +17,7 @@ namespace DataAccess
         public HandlerFactory(DIProvider diProvider)
         {
             DiProvider = diProvider;
-            Context = DiProvider.ServiceProvider.GetRequiredService<NoteContext>();
+            Context = DiProvider.ServiceProvider.GetRequiredService<JobContext>();
         }
 
         public IHandler Create(Type type)
