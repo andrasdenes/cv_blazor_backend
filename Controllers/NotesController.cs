@@ -16,18 +16,18 @@ namespace CVBackend.Controllers
         public NotesController(IHandlerFactory factory)
         {
             Handler = (INoteHandler)factory.Create(typeof(NoteHandler));
-            ControllerName = "Notes"; 
+            ControllerName = "Notes";
         }
 
         [HttpGet]
-        public IActionResult GetAll() 
+        public IActionResult GetAll()
         {
             var noteCollection = new CollectionDto<NoteDto>();
             var notes = Handler.GetAll();
-            if(notes != null ) 
+            if (notes != null)
             {
                 foreach (var note in notes)
-                { 
+                {
                     NoteDto noteDto = new NoteDto();
                     noteDto.Title = note.Title;
                     noteDto.Description = note.Description;

@@ -1,9 +1,9 @@
-﻿using System.Reflection;
-using DataAccess.Configuration;
-using Microsoft.Azure.Cosmos;
+﻿using DataAccess.Configuration;
+using DataAccess.MapperConfigurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace DataAccess
 {
@@ -27,7 +27,9 @@ namespace DataAccess
 
             collection.Configure<DataAccessConfig>(configuration);
 
-            collection.AddDbContext<NoteContext>(
+            collection.AddAutoMapper(typeof(EntityToDtoMapperConfiguration));
+
+            collection.AddDbContext<JobContext>(
                     options => options.UseCosmos(
                         configuration["CosmosDb:AccountEndpoint"], 
                         configuration["CosmosDb:AccountKey"], 

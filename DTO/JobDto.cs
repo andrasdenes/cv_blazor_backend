@@ -1,8 +1,7 @@
-﻿namespace DataAccess.Entities
+﻿namespace DTO
 {
-    public class Job
+    public class JobDto
     {
-        public Guid Id { get; set; }
         public List<string> TechStack { get; set; }
         public List<string> Achievements { get; set; }
         public string JobTitle { get; set; }
@@ -10,7 +9,7 @@
         public Uri Image { get; set; }
         public string ImageAlt { get; set; }
         public Uri CompanyUrl { get; set; }
-        public string CompanyName { get; set;}
+        public string CompanyName { get; set; }
         public string From { get; set; }
         public string To { get; set; }
     }
