@@ -2,7 +2,7 @@
 {
     public class Job
     {
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
         public List<string> TechStack { get; set; }
         public List<string> Achievements { get; set; }
         public string JobTitle { get; set; }

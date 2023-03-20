@@ -16,11 +16,11 @@ namespace DataAccess
 
             modelBuilder.Entity<Job>()
                 .HasNoDiscriminator()
-                .HasPartitionKey(x => x.Id)
-                .HasKey(x => x.Id);
+                .HasPartitionKey(x => x.id)
+                .HasKey(x => x.id);
 
             modelBuilder.Entity<Job>()
-                .Property(p => p.Id)
+                .Property(p => p.id)
                 .HasConversion<string>();
         }
     }

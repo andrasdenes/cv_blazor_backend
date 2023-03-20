@@ -1,6 +1,7 @@
 ﻿using DataAccess.Entities;
 using DataAccess.HandlerInterfaces;
 using DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.HandlerImplementations
 {
@@ -27,7 +28,7 @@ namespace DataAccess.HandlerImplementations
 
         public JobDto GetJobById(Guid Id)
         {
-            var jobEntity = _ctx.Jobs.FirstOrDefault(x => x.Id == Id);
+            var jobEntity = _ctx.Jobs.FirstOrDefault(x => x.id == Id);
             var jobDto = MapEntitiyToDto(jobEntity);
             return jobDto;
         }

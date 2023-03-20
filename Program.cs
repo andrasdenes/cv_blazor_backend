@@ -1,4 +1,5 @@
 using DataAccess;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace CVBackend
 {
@@ -31,6 +32,15 @@ namespace CVBackend
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseCors(
+                policy =>
+                {
+                    policy.AllowAnyHeader();
+                    policy.AllowAnyMethod();
+                    policy.AllowAnyOrigin();
+                }
+            );
 
             app.MapControllers();
 
