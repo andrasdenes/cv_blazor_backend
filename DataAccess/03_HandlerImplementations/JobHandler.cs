@@ -16,7 +16,7 @@ namespace DataAccess.HandlerImplementations
 
         public CollectionDto<JobDto> GetAllJobs()
         {
-            var jobsEntity = _ctx.Jobs.ToList();
+            var jobsEntity = _ctx.Jobs.ToList().OrderByDescending(x => x.From);
             var jobsDto = new CollectionDto<JobDto>();
             foreach (var job in jobsEntity)
             { 
